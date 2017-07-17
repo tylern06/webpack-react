@@ -1,0 +1,20 @@
+#box{
+    height: 500px;
+    width: 500px;
+}
+.on{
+    background-color: yellow;
+}
+.off{
+    background-color: black;
+}
+
+
+.hoveron {
+  opacity: 0.5;
+  transition: 0.7s;
+}
+
+.hoveroff {
+  transition: 0.7s;
+}
