@@ -25,7 +25,7 @@ class State extends React.Component {
   }
   render() {
     return (
-      <div id = "box" className={[this.state.lights, this.state.hover].join(' ')} onMouseOver={this.hoverOn} onMouseOut={this.hoverOff}>
+      <div id = "box" className={this.state.lights + " " + this.state.hover} onMouseOver={this.hoverOn} onMouseOut={this.hoverOff}>
            <button className="btn btn-primary" onClick={this.turnOn}>Turn On</button>
            <button className="btn btn-danger" onClick={this.turnOff}>Turn Off</button>
        </div>
