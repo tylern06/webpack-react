@@ -2,6 +2,7 @@ const path = require("path");
 const webpack = require('webpack');
 const sourcePath = path.join(__dirname, 'src');
 const buildPath = path.join(__dirname, 'build');
+var ChunkManifestPlugin = require("chunk-manifest-webpack-plugin");
 
 //entry - src path, output - dest path
 const webpackConfig = {
@@ -10,7 +11,7 @@ const webpackConfig = {
     },
     output: {
         path: buildPath,
-        filename: 'build.js'
+        filename: 'bundle.js'
     },
     module: {
       rules: [
@@ -31,7 +32,7 @@ const webpackConfig = {
         },
         {
             test: /\.js$/,
-            exclude: /(node_modules)/,
+            exclude: /(node_modules|bower_components)/,
             use: "babel-loader"
         },
       ],

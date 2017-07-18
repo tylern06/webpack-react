@@ -19,4 +19,4 @@ The main use for Webpack is to be able to bundle different modules and import th
 If you pass no options to env it essentially works like es2015, es2016, es2017 all together.
 
 ## babel-preset-react-es2015
-Bebel to understand JSX, which allows us to define our HTML directly in our Javascript file
+Babel to understand JSX, which allows us to define our HTML directly in our Javascript file
