@@ -2,7 +2,13 @@ const path = require("path");
 const webpack = require('webpack');
 const sourcePath = path.join(__dirname, 'src');
 const buildPath = path.join(__dirname, 'build');
-var ChunkManifestPlugin = require("chunk-manifest-webpack-plugin");
+// var ChunkManifestPlugin = require("chunk-manifest-webpack-plugin");
+// const ExtractTextPlugin = require("extract-text-webpack-plugin");
+//
+// const extractSass = new ExtractTextPlugin({
+//     filename: "[name].[contenthash].css",
+//     disable: process.env.NODE_ENV === "development"
+// });
 
 //entry - src path, output - dest path
 const webpackConfig = {
@@ -18,6 +24,10 @@ const webpackConfig = {
         {
             test: /\.css$/,
             use: ['style-loader', 'css-loader'],
+        },
+        {
+          test: /\.scss$/,
+            use: ['style-loader', 'css-loader', 'sass-loader']
         },
         {
             test: /\.(jpg|png|svg)$/,
