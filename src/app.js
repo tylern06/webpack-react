@@ -5,6 +5,8 @@ import State from './Components/State/State.js';
 import Counter from './Components/Counter/Counter.js';
 import Life from './Components/Life/Life.js';
 import Clock from './Components/Clock/Clock.js';
+import Form from './Components/Form/Form.js';
+
 
 let user = {first_name: "Steph", last_name: "Villalobos", age: 30};
 //let parent, App, mount/remove it's component and their respective elements/events that were created
@@ -32,8 +34,8 @@ class App extends React.Component {
     //     <Counter name="Tyler"/>
     //     <Life/>
     // )
-
-    //Life remove compenent example
+    //
+    // Life remove compenent example
     // if(this.state.showCountDown){
     //    return (
     //        <Life destroyMethod={this.removeCountDown}/>
@@ -43,21 +45,26 @@ class App extends React.Component {
     //          <h1>Crisis Averted</h1>
     //      )
     // }
-
-    //Show/Hide Clock Example
-    if(this.state.showClock) {
-      //pass down remove method as a prop to child component
-      return (
-        <div>
-          <Clock removeClock1={this.removeClock}/>
-        </div>
-      )
-    }
-    else {
-      return (
-        <div className='clock'><button className='btn btn-primary' onClick={this.addClock}>Add Clock</button></div>
-      )
-    }
+    //
+    // Show/Hide Clock Example
+    // if(this.state.showClock) {
+    //   //pass down remove method as a prop to child component
+    //   return (
+    //     <div>
+    //       <Clock removeClock1={this.removeClock}/>
+    //     </div>
+    //   )
+    // }
+    // else {
+    //   return (
+    //     <div className='clock'><button className='btn btn-primary' onClick={this.addClock}>Add Clock</button></div>
+    //   )
+    // }
+    return (
+      <div>
+        <Form/>
+      </div>
+    )
   }
 }
 

@@ -13,23 +13,27 @@ class Clock extends React.Component {
     let h = today.getHours();
     let m = today.getMinutes();
     let s = today.getSeconds();
-    let ap;
-    if(h == 0){
-      ap ='AM';
-      h = 12;
-    }
-    else if (h < 12) {
-      ap='AM';
-    }
-    else if (h==12) {
-      ap='PM';
-    }
-    else if(h > 12) {
-      h -= 12;
+    var ap;
+    switch (true) {
+      case (h == 0):
+            ap ='AM';
+            h = 12;
+            break;
+      case (h < 0):
+            ap = 'AM';
+            break;
+      case (h == 12):
+            ap = 'PM';
+            break;
+      case (h > 12):
+            h -= 12;
+            ap = 'PM';
+            break;
     }
     if(m<=9) m="0"+m;
     if(s<=9) s="0"+s;
-    return h + ':' + m + ':' + s + " " + ap;
+    let time = h + ':' + m + ':' + s + " " + ap;
+    return time;
   }
 
   render(){
