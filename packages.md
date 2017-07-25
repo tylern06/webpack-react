@@ -4,6 +4,9 @@
 - url-loader: Will take care of loading our images.
 - html-loader: Will take care of loading our html.
 - webpack-dev-server: Will replace browser-sync
+- style-loader: converts the css into inline stylesheets
+- css-loader: translates CSS into CommonJS
+- sass-loader: compiles Sass to CSS
 
 ## What is Webpack?
 
@@ -21,7 +24,5 @@ If you pass no options to env it essentially works like es2015, es2016, es2017 a
 ## babel-preset-react-es2015
 Babel to understand JSX, which allows us to define our HTML directly in our Javascript file
 
-## Loaders
-style-loader - converts the css into inline stylesheets
-css-loader -  translates CSS into CommonJS
-sass-loader - compiles Sass to CSS
+## Compile Webpack
+Run 'webpack' from terminal

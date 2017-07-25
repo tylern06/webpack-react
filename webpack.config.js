@@ -2,13 +2,21 @@ const path = require("path");
 const webpack = require('webpack');
 const sourcePath = path.join(__dirname, 'src');
 const buildPath = path.join(__dirname, 'build');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 // var ChunkManifestPlugin = require("chunk-manifest-webpack-plugin");
-// const ExtractTextPlugin = require("extract-text-webpack-plugin");
-//
-// const extractSass = new ExtractTextPlugin({
-//     filename: "[name].[contenthash].css",
-//     disable: process.env.NODE_ENV === "development"
-// });
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
+
+const extractSass = new ExtractTextPlugin({
+    filename: "[name].[contenthash].css",
+    disable: process.env.NODE_ENV === "development"
+});
+
+const HtmlWebpackConfig = new HtmlWebpackPlugin({
+  title: 'React App',
+  template: path.join(__dirname,'build/index.html'),
+  filename: 'index.html',
+  inject : 'body'
+})
 
 //entry - src path, output - dest path
 const webpackConfig = {
@@ -17,7 +25,7 @@ const webpackConfig = {
     },
     output: {
         path: buildPath,
-        filename: 'bundle.js'
+        filename: 'bundle.[hash].js'
     },
     module: {
       rules: [
@@ -28,6 +36,11 @@ const webpackConfig = {
         {
           test: /\.scss$/,
             use: ['style-loader', 'css-loader', 'sass-loader']
+            // use: ExtractTextPlugin.extract({
+            //   fallback: 'style-loader',
+            //   //resolve-url-loader may be chained before sass-loader if necessary
+            //   use: ['css-loader', 'sass-loader']
+            // })
         },
         {
             test: /\.(jpg|png|svg)$/,
@@ -60,6 +73,8 @@ const webpackConfig = {
     },
     plugins: [  // This Plugin will enable us to use Hot Reloading
       new webpack.HotModuleReplacementPlugin(),
+      // new ExtractTextPlugin('style.[hash].css'),
+      HtmlWebpackConfig
     ],
   }
 

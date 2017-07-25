@@ -6,6 +6,8 @@ import Counter from './Components/Counter/Counter.js';
 import Life from './Components/Life/Life.js';
 import Clock from './Components/Clock/Clock.js';
 import Form from './Components/Form/Form.js';
+import Login from './Components/Login/Login.js';
+import Parent from './Components/Bubble/Parent.js';
 
 
 let user = {first_name: "Steph", last_name: "Villalobos", age: 30};
@@ -60,9 +62,21 @@ class App extends React.Component {
     //     <div className='clock'><button className='btn btn-primary' onClick={this.addClock}>Add Clock</button></div>
     //   )
     // }
+    // return (
+    //   <div>
+    //     <Form/>
+    //   </div>
+    // )
+
+    // return (
+    //   <div>
+    //     <Login first_name='Tyler'/>
+    //   </div>
+    // )
+
     return (
-      <div>
-        <Form/>
+      <div className="container">
+          <Parent />
       </div>
     )
   }

@@ -34,7 +34,7 @@ class Form extends React.Component {
   render(){
     //check current state after view is re-rendered onchange
     // console.log(this.state.first_name)
-    // console.log(this.state.course)
+    console.log(this.state.course)
     if (this.state.showForm) {
       return (
         <div className='flexbox-container'>
