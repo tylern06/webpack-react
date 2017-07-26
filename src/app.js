@@ -8,9 +8,12 @@ import Clock from './Components/Clock/Clock.js';
 import Form from './Components/Form/Form.js';
 import Login from './Components/Login/Login.js';
 import Parent from './Components/Bubble/Parent.js';
+import AppComponent from './Components/App/App.js';
+import List from './Components/List/List.js';
+import TaskManager from './Components/TaskManager/TaskManager.js';
 
 
-let user = {first_name: "Steph", last_name: "Villalobos", age: 30};
+
 //let parent, App, mount/remove it's component and their respective elements/events that were created
 class App extends React.Component {
   constructor(props){
@@ -29,6 +32,8 @@ class App extends React.Component {
      this.setState({showClock: true});
    }
   render() {
+    let user = {first_name: "Steph", last_name: "Villalobos", age: 30};
+    let users = ["eddy", "brendan", "goose", "eli", "marcos"];
     // return (
     //     <Prop user={user}/>
     //     <Event/>
@@ -62,6 +67,7 @@ class App extends React.Component {
     //     <div className='clock'><button className='btn btn-primary' onClick={this.addClock}>Add Clock</button></div>
     //   )
     // }
+
     // return (
     //   <div>
     //     <Form/>
@@ -74,11 +80,34 @@ class App extends React.Component {
     //   </div>
     // )
 
+    //Bubble tree component
+    // return (
+    //   <div>
+    //     <Parent/>
+    //   </div>
+    // )
+
+
+    // return (
+    //   <div className="container">
+    //       <AppComponent/>
+    //   </div>
+    // )
+
+    //List update component
+    // return (
+    //   <div className="container">
+    //     <List users={users} loggedIn='goose' />
+    //   </div>
+    // )
+
+    //Task Manager component
     return (
-      <div className="container">
-          <Parent />
+      <div>
+        <TaskManager/>
       </div>
     )
+
   }
 }
 

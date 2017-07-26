@@ -19,6 +19,10 @@ class Child extends React.Component{
       this.props.updateUser(e.target.name, e.target.value)
     }
 
+    updateUser2 = (key, value) => {
+      this.props.updateUser(key,value)
+    }
+
     //tell child component to sync with parent prop when it is changed
     componentWillReceiveProps(props){
       this.setState({
@@ -36,10 +40,10 @@ class Child extends React.Component{
                     <p>Last Name:  <input name='last_name' type="text" value={this.state.last_name} onChange={this.updateUser} /></p>
                 </div>
                 <div className="col-sm-6 col-xs-12">
-                    <GrandChild user={this.state} />
+                    <GrandChild user={this.state} updateUser= {this.updateUser2} />
                 </div>
                 <div className="col-sm-6 col-xs-12">
-                    <GrandChild user={this.state} />
+                    <GrandChild user={this.state} updateUser= {this.updateUser2} />
                 </div>
             </div>
         )

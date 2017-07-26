@@ -11,6 +11,9 @@ class GrandChild extends React.Component{
       //     first_name: "Grand Child",
       //     last_name: "Update Self"
       // })
+      this.props.updateUser('first_name', 'Grand Child')
+      this.props.updateUser('last_name', 'User Update')
+
       console.log("Grandchild Updating User")
     }
 

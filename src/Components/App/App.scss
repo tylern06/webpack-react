@@ -1,0 +1,12 @@
+#app {
+  padding: 50px;
+  border: 1px solid black;
+  #mid {
+    padding: 50px;
+    border: 1px solid green;
+    #low {
+      padding: 50px;
+      border: 1px solid red;
+    }
+  }
+}
