@@ -17,7 +17,7 @@ The main use for Webpack is to be able to bundle different modules and import th
 - style-loader: converts the css into inline stylesheets
 - css-loader: translates CSS into CommonJS
 - sass-loader: compiles Sass to CSS
-
+- react-router: will let us render specific components based on the URL
 ## babel-preset-env
 If you pass no options to env it essentially works like es2015, es2016, es2017 all together.
 
